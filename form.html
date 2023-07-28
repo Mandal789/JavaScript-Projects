@@ -70,64 +70,29 @@
 
         function validateform() {
             if (username.value == "") {
-                //document.getElementById("usererror").innerHTML = "Username is Empty";
+
                 username.placeholder = "Username is Empty";
                 username.className = "red";
                 flag = 0;
             } else if (username.value.length < 5) {
-                //document.getElementById("usererror").innerHTML = "Username requered minumum 5 character";
+
                 username.value = "";
                 username.placeholder = "Username Require min 5 char";
                 username.className = "red";
                 flag = 0;
             }
-            //  else {
-            //     document.getElementById("usererror").innerHTML = "";
-            // }
+
 
             //**********************password verification**************************************//
 
             if (passwd.value == "") {
-                // document.getElementById("passerror").innerHTML = "Password is Empty";
+
                 document.getElementById("passerror").innerHTML = "";
                 passwd.placeholder = "Password is Empty";
                 passwd.className = "red";
                 flag = 0;
 
-            }
-            //else if (!passwd.value.match(/[0-9]/)) {
-
-            //     passwd.value = "";
-            //     passwd.placeholder = "Required Atleast 1 number[0-9]";
-            //     passwd.className = "red";
-            //     flag = 0;
-
-            // } else if (!passwd.value.match(/[a-z]/)) {
-
-            //     passwd.value = "";
-            //     passwd.placeholder = "Required Atleast 1 lowercase[a-z]";
-            //     passwd.className = "red";
-            //     flag = 0;
-            // } else if (!passwd.value.match(/[A-Z]/)) {
-
-            //     passwd.value = "";
-            //     passwd.placeholder = "Required Atleast 1 Uppercase[A-Z]!";
-            //     passwd.className = "red";
-            //     flag = 0;
-            // } else if (!passwd.value.match(/[\W]/)) {
-
-            //     passwd.value = "";
-            //     passwd.placeholder = "Required Atleast 1 spacial char";
-            //     passwd.className = "red";
-            //     flag = 0;
-            // } else if (passwd.value < 8) {
-
-            //     passwd.value = "";
-            //     passwd.placeholder = "Required min 8 character !";
-            //     passwd.className = "red";
-            //     flag = 0;
-            // } 
-            else if (!passwd.value.match(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)) {
+            } else if (!passwd.value.match(/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/)) {
 
                 document.getElementById("passerror").innerHTML = "Your password must be at least 8 characters with at least a symbol[!@#$%&*], upper and lower case letters and a number";
                 flag = 0;
@@ -153,8 +118,6 @@
         } else {
             console.log("not spacial char");
         }
-        // document.write("password = " + passwd.value);
-        // console.log("UserName = " + username.value);
     </script>
 </body>
 
