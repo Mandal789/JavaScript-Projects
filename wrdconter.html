@@ -43,8 +43,8 @@
     }
     
     #btn {
-        margin-left: 300px;
-        padding: 4px;
+        margin-left: 37px;
+        padding: 6px;
         padding-top: 7px;
         font-size: 14px;
         font-weight: bold;
@@ -58,7 +58,10 @@
     <p id="count">
         <span id="word">0</span> word and
         <span id="char">0</span> character
+        <button id="btn" onclick="ToupperCase()">ToUpperCase</button>
+        <button id="btn" onclick="TolowerCase()">ToLowerCase</button>
         <button id="btn" onclick="txtclear()">ClearTxt</button>
+
     </p>
 
     <script>
@@ -76,7 +79,7 @@
 
             var text1 = text.trim();
             var word = text.split(" ");
-            console.log(word);
+            //console.log(word);
             var targetword = document.getElementById("word");
             var cleanlist = word.filter(function(elm) {
                 return elm != "";
@@ -89,6 +92,20 @@
             }
 
         })
+
+        //console.log(x);
+
+        function ToupperCase() {
+            let x = document.getElementById("textbox").value;
+            document.getElementById("textbox").value = `${x.toUpperCase()}`
+
+        }
+
+        function TolowerCase() {
+            let x = document.getElementById("textbox").value;
+            document.getElementById("textbox").value = `${x.toLowerCase()}`
+
+        }
 
         function txtclear() {
 
