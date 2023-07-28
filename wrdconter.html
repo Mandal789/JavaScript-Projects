@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word counter</title>
+</head>
+<style>
+    body {
+        padding: 120px 300px;
+        background-color: #106ed799;
+    }
+    
+    h1 {
+        text-align: center;
+        background-color: rgb(84 0 212);
+        color: white;
+        padding: 11px;
+        margin: 0;
+    }
+    
+    textarea {
+        background-color: antiquewhite;
+        color: black;
+        width: 98.1%;
+        height: 250px;
+        border: 5px solid rgb(84 0 212);
+        font-size: 28px;
+    }
+    
+    #count {
+        text-align: center;
+        background-color: rgb(84 0 212);
+        color: white;
+        margin-top: -5px;
+        font-size: 29px;
+        padding: 4px;
+    }
+    
+    .hoo::-webkit-input-placeholder {
+        color: green;
+    }
+    
+    #btn {
+        margin-left: 300px;
+        padding: 4px;
+        padding-top: 7px;
+        font-size: 14px;
+        font-weight: bold;
+        background-color: #1eff00;
+    }
+</style>
+
+<body>
+    <h1>Word and character Counter</h1>
+    <textarea name="textbox" class="hoo" id="textbox" cols="30" rows="10" placeholder="Write Here"></textarea>
+    <p id="count">
+        <span id="word">0</span> word and
+        <span id="char">0</span> character
+        <button id="btn" onclick="txtclear()">ClearTxt</button>
+    </p>
+
+    <script>
+        var textbox = document.getElementById("textbox");
+        //console.log(textbox.getAttribute("placeholder"));
+        //var placeholder = textbox.getAttribute("placeholder");
+        //placeholder.style.color = "green";
+        //console.log(placeholder.value);
+        // window.addEventListener('load', function() {
+        //     textbox.placeholder.style.color = "green";
+        //     console.log("hello");
+        // })
+        //console.log(textbox.classList.add('hoo'));
+        textbox.addEventListener('input', function() {
+            var text = this.value;
+            var char = document.getElementById("char");
+            char.innerHTML = text.length;
+
+            char.style.cssText = "color :#0cff00;  font-weight: bold;"
+            if (text.length == 0) {
+                char.style.cssText = "color :white;"
+            }
+
+            var text1 = text.trim();
+            var word = text.split(" ");
+            console.log(word);
+            var targetword = document.getElementById("word");
+            var cleanlist = word.filter(function(elm) {
+                return elm != "";
+            })
+            targetword.innerHTML = cleanlist.length;
+
+            targetword.style.cssText = "color :#0cff00;  font-weight: bold;"
+            if (cleanlist.length == 0) {
+                targetword.style.cssText = "color :white;"
+            }
+
+        })
+
+        function txtclear() {
+
+
+            document.getElementById("textbox").value = "";
+            document.getElementById("word").innerHTML = 0;
+            document.getElementById("word").style.cssText = "color :white;"
+            document.getElementById("char").innerText = 0;
+            document.getElementById("char").style.cssText = "color :white;"
+
+        }
+    </script>
+</body>
+
+</html>
