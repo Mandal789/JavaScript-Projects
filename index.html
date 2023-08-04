@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock and wetherApp</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+</head>
+
+
+<body>
+
+
+    <div id="clockContainer">
+
+        <div id="wday"></div>
+        <div id="date"></div>
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+        <div id="center"></div>
+        <div id="center2"></div>
+
+    </div>
+    <div class="wethercontainer">
+
+        <div class="wetherbody">
+            <div id="time">
+
+            </div>
+            <div class="search">
+                <input type="text" placeholder="enter city name" spellcheck="false">
+                <button><img src="images/search.png" alt=""></button>
+            </div>
+            <div id="error">
+                Invalid city name!
+                <div id="num"></div>
+            </div>
+            <div class="now">
+                <p>RECENT LOCATIONS</p>
+            </div>
+            <div class="wether">
+                <img src="images/rain.png" class="wthr-icon">
+                <p class="iconname">cloddy</p>
+                <h1 class="temp">22</h1>
+                <h2 class="city">New Delhi</h2>
+                <span class="country">india</span>
+                <div class="details">
+                    <div class="air">
+                        <img src="images/humidity.png">
+                        <div>
+                            <p class="humidity">50%</p>
+                            <p class="airtxt">Humidity</p>
+                        </div>
+                    </div>
+                    <div class="air">
+                        <img src="images/wind.png">
+                        <div>
+                            <p class="wind">15 km/h</p>
+                            <p class="airtxt">Wind Speed</p>
+                        </div>
+                    </div>
+                </div>
+                <span class="loc">
+                 
+                </span>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>

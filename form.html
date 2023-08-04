@@ -49,6 +49,12 @@
         color: red;
         font-size: 15px;
     }
+    
+    #view {
+        position: relative;
+        left: 31%;
+        bottom: 117px;
+    }
 </style>
 
 <body>
@@ -56,17 +62,25 @@
         <h2>Login form</h2>
         <form action="" id="form" onsubmit="return validateform()">
             <input type="text" id="Urnme" placeholder="User Name" autocomplete="off"><br>
+
             <p id="usererror" class="error"></p>
             <input type="password" id="pas" placeholder="password" autocomplete="off"><br>
             <p id="passerror" class="error"></p>
             <input type="submit" id="btn">
         </form>
+        <input type="checkbox" name="seen" id="view" onclick="seeUserName()" />
     </div>
 
     <script>
         let username = document.getElementById("Urnme");
         let passwd = document.getElementById("pas");
         let flag = 1;
+
+        function seeUserName() {
+            //passvalue = passwd.value;
+            document.getElementById("view").checked ? passwd.type = "text" : passwd.type = "password"
+
+        }
 
         function validateform() {
             if (username.value == "") {
@@ -81,6 +95,7 @@
                 username.className = "red";
                 flag = 0;
             }
+
 
 
             //**********************password verification**************************************//
